@@ -13,7 +13,7 @@ const Post = () => {
       e.preventDefault();
     const {title, content} = postData;
     
-    axios.post('http://${process.env…REACT_APP_API_IP}:8080/posts',{title,content},{
+    axios.post(`http://${process.env…REACT_APP_API_IP}:8080/posts`,{title,content},{
                   headers:{
                     'Content-Type':'application/json'         
                   }

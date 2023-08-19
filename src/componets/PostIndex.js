@@ -7,7 +7,7 @@ const PostIndex=()=>{
        const [postData, setPostData] = useState([]);
     
     useEffect (()=>{
-        axios.get("http://${process.env…REACT_APP_API_IP}:8080/index")
+        axios.get(`http://${process.env…REACT_APP_API_IP}:8080/index`)
    .then((res) => {
                 const responseData = res.data;
                 console.log(responseData); // Log the responseData to see its structure
