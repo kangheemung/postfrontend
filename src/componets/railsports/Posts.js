@@ -5,7 +5,7 @@ const Posts =()=>{
     let [lists, setLists] = useState([])
     
     useEffect(()=>{
-       axios.get("http://13.231.207.233:8080/posts/index")
+       axios.get("http://${process.env…REACT_APP_API_IP}:8080/posts/index")
        .then((res) =>{
            console.log(res.data)
            
