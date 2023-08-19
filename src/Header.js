@@ -10,6 +10,7 @@ const ulStyle = {
 }
 
 const Header = () => (
+  <>
   <nav>
     <ul style={ulStyle}>
       <li style={{ flex: '1 0 auto'}}>
@@ -50,6 +51,7 @@ const Header = () => (
       </li>
     </ul>
   </nav>
+  </>
 )
 
 export default Header;

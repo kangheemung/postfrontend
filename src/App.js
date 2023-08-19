@@ -1,40 +1,34 @@
 import './App.css';
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Modal from './componets/Modal';
-import Header from './Header';
-import Post from './componets/Post';
+ // Remove duplicate "Router" import
+
+
+import Button from './Button';
+import List from './componets/starwars/List';
 import Hellow from './componets/Hellow';
-import PostIndex from './componets/PostIndex';
-import PostShow from './componets/PostShow';
+import Posts from './componets/railsposts/Posts';
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
 
-  function toggleModalHandler() {
-    setShowModal((isShowing) => !isShowing);
-  }
 
   return (
-    <Router>
-      <>
-        <Header />
-        <main className="main">
-          <h1>ここはAPPの場所</h1>
-          <Hellow />
-          <Routes>
-            <Route
-              path="/posts/new"
-              element={<Post onContact={toggleModalHandler} />}
-            />
-            {showModal && <Modal onClose={toggleModalHandler} />}
-            <Route path="/index" element={<PostIndex />} />
-            <Route path="/posts/:id" element={<PostShow />} />
-          </Routes>
-        </main>
-      </>
-    </Router>
+    <>
+      <div className="main">
+        <h1>ここはAPPの場所</h1>
+        <Hellow />
+
+        <Button color="red" msg="ログイン" width="500px" />
+        <Button color="blue" msg="会員登録" width="300px" />
+        <input type="text" />
+
+        <div className="posts">
+          <List />
+          <Posts />
+        </div>
+
+     
+      </div>
+    </>
   );
 }
 
